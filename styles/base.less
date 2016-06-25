@@ -1,0 +1,103 @@
+@import "syntax-variables";
+
+atom-text-editor, :host {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+}
+
+atom-text-editor .gutter, :host .gutter {
+  background-color: @syntax-gutter-background-color;
+  color: @syntax-gutter-text-color;
+}
+
+atom-text-editor .gutter .line-number.cursor-line, :host .gutter .line-number.cursor-line {
+  background-color: @syntax-gutter-background-color-selected;
+  color: @syntax-gutter-text-color-selected;
+}
+
+atom-text-editor .gutter .line-number.cursor-line-no-selection, :host .gutter .line-number.cursor-line-no-selection {
+  color: @syntax-gutter-text-color-selected;
+}
+
+atom-text-editor .wrap-guide, :host .wrap-guide {
+  color: @syntax-wrap-guide-color;
+}
+
+atom-text-editor .indent-guide, :host .indent-guide {
+  color: @syntax-indent-guide-color;
+}
+
+atom-text-editor .invisible-character, :host .invisible-character {
+  color: @syntax-invisible-character-color;
+}
+
+atom-text-editor .search-results .marker .region, :host .search-results .marker .region {
+  background-color: transparent;
+  border: @syntax-result-marker-color;
+}
+
+atom-text-editor .search-results .marker.current-result .region, :host .search-results .marker.current-result .region {
+  border: @syntax-result-marker-color-selected;
+}
+
+atom-text-editor.is-focused .cursor, :host(.is-focused) .cursor {
+  border-color: @syntax-cursor-color;
+}
+
+atom-text-editor.is-focused .selection .region, :host(.is-focused) .selection .region {
+  background-color: @syntax-selection-color;
+}
+
+atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-editor.is-focused .line.cursor-line, :host(.is-focused) .line-number.cursor-line-no-selection, :host(.is-focused) .line.cursor-line {
+  background-color: @syntax-current-line-color;
+
+  .comment {
+    color: lighten(@comment-color, 8%);
+  }
+}
+
+.comment {
+  color: @comment-color;
+}
+
+.coffee.embedded {
+  color: @syntax-text-color;
+
+  &.punctuation {
+    color: @string-color;
+  }
+}
+
+.keyword, .storage, .curly, .arguments.bracket,
+.parameters.puncutation, .css.property-list.punctuation {
+  color: #B27900;
+}
+
+.constant {
+  color: #FDCC5B;
+}
+
+.string, .regexp, .constant.numeric {
+  color: @string-color;
+}
+
+.invalid {
+  color: #FFFFFF;
+  background-color: #990000;
+}
+
+.meta.diff.header, .meta.separator.diff, .meta.diff.index, .meta.diff.range {
+  background-color: #2F33AB;
+}
+
+.markup.deleted {
+  color: #F92672;
+}
+
+.markup.inserted {
+  color: #A6E22E;
+}
+
+.markup.changed {
+  color: #967EFB;
+}
